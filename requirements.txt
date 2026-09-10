@@ -1,0 +1,106 @@
+# EduMail Generator 2026 - Python Dependencies
+# ================================================
+# This file specifies all required Python packages and their versions
+# for the EduMail Generator project.
+#
+# Installation:
+#     pip install -r requirements.txt
+#
+# Python Version: 3.7+
+# Last Updated: September 2026
+
+# ============================================
+# WEB & HTTP UTILITIES
+# ============================================
+
+# HTTP library for making web requests
+# Used for: API calls, downloading content
+# Version: 2.28.0+ (2022+, Python 3.7+ support)
+requests>=2.28.0
+
+
+# ============================================
+# DATA GENERATION & FAKER
+# ============================================
+
+# Generate realistic fake data (names, addresses, etc.)
+# Used in: __constants/const.py for creating fake student information
+# Version: 8.0.0+ (Python 3.7+ support, maintained)
+faker>=8.0.0
+
+
+# ============================================
+# BROWSER AUTOMATION - SELENIUM
+# ============================================
+
+# Browser automation framework - IMPORTANT: Version 4.x (NOT 3.x)
+# 
+# BREAKING CHANGES from Selenium 3 → 4:
+#   OLD (Selenium 3.x):  driver.find_element_by_id("id")
+#   NEW (Selenium 4.x):  driver.find_element(By.ID, "id")
+#
+# Used in: bot.py for automating college application form filling
+# Version: 4.0.0+ (Latest stable, Python 3.7+ support, 2024+ compatible)
+# 
+# Key Improvements in 4.x:
+#   ✓ Selenium Grid improvements
+#   ✓ Better error handling
+#   ✓ Improved WebDriver API
+#   ✓ Better performance
+selenium>=4.0.0
+
+
+# ============================================
+# TERMINAL & DISPLAY
+# ============================================
+
+# Cross-platform terminal color support
+# Used in: __colors__/colors.py and bot.py for colored console output
+# Version: 0.4.0+ (Python 3.7+ support, cross-platform compatible)
+colorama>=0.4.0
+
+
+# ============================================
+# WEBDRIVER MANAGEMENT (NEW - 2026)
+# ============================================
+
+# Automatic WebDriver (ChromeDriver, GeckoDriver) management
+# 
+# WHY THIS IS NEEDED:
+#   OLD (before 2026):
+#     - Manual ChromeDriver download from chromedriver.storage.googleapis.com
+#     - chromedriver.storage.googleapis.com was SHUT DOWN in 2024
+#     - Manual version matching between browser and driver
+#   
+#   NEW (2026):
+#     - Automatic driver detection and download
+#     - Compatible with all browsers (Chrome, Firefox, Edge, Safari)
+#     - Version management is automatic
+#     - Works on Windows, macOS, Linux
+#
+# Used in: __dwnldDrivers/versions.py and setup.py
+# Version: 4.0.0+ (Python 3.7+ support, maintained actively)
+# 
+# Features:
+#   ✓ ChromeDriverManager - Auto-download ChromeDriver
+#   ✓ GeckoDriverManager - Auto-download GeckoDriver
+#   ✓ Platform detection (Windows/Mac/Linux)
+#   ✓ Architecture detection (32/64 bit)
+webdriver-manager>=4.0.0
+
+
+# ============================================
+# SUMMARY OF CHANGES (Compared to Original)
+# ============================================
+# 
+# REMOVED:
+#   ✗ clint - Progress bar library (no longer maintained, not needed)
+#
+# ADDED:
+#   ✓ webdriver-manager - Automatic driver management (2024+ requirement)
+#
+# UPDATED:
+#   ↑ selenium: 3.x → 4.x (API changed significantly)
+#   ↑ All packages now have specific version constraints
+#
+# ============================================
